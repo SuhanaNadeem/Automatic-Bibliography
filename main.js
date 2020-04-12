@@ -13,13 +13,13 @@ function clickBtn(className) {
     hashtagBtns.forEach(btn => btn.click())
 }
 
+// WORK ON ENTERING LINK FROM TIS FUNCTION, and
+// then clicking search
 function enterLink() {
 
     document.getElementsByClassName(".sc-blIhvV").value = toCite
     clickBtn(searchClassName);
 }
-
-
 
 let searchClassName = ".sc-bYTsla"
 let citeClassName = ".sc-gisBJw"
@@ -28,6 +28,7 @@ let completeClassName = "sc-kjoXOD"
 
 // clickBtn(searchClassName);
 
+//uncomment this search call once link thing works
 window.onload = function search() {
     clickBtn(searchClassName);
 };
