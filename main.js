@@ -6,14 +6,17 @@
 
 // website: https://www.easybib.com/mla8/website/search-form
 
-let hashtagBtns = document.querySelectorAll('gb_sf gb_tf')
+let toCite = "https://www.khanacademy.org/science/physics/forces-newtons-laws"
 
 function enterLink() {
-    // alert("This is the first.");
+
+    document.getElementsByClassName(".sc-blIhvV").value = toCite
+
 }
 
 function clickSearch() {
-    // alert("This is the first.");
+    let hashtagBtns = document.querySelectorAll('.sc-bYTsla')
+    hashtagBtns.forEach(btn => btn.click())
 }
 
 function clickCite() {
