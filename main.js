@@ -8,15 +8,18 @@
 
 let toCite = "https://www.khanacademy.org/science/physics/forces-newtons-laws"
 
-function enterLink() {
-
-    document.getElementsByClassName(".sc-blIhvV").value = toCite
-}
-
 function clickBtn(className) {
     let hashtagBtns = document.querySelectorAll(className)
     hashtagBtns.forEach(btn => btn.click())
 }
+
+function enterLink() {
+
+    document.getElementsByClassName(".sc-blIhvV").value = toCite
+    clickBtn(searchClassName);
+}
+
+
 
 let searchClassName = ".sc-bYTsla"
 let citeClassName = ".sc-gisBJw"
@@ -25,29 +28,15 @@ let completeClassName = "sc-kjoXOD"
 
 // clickBtn(searchClassName);
 
-window.onload = function() {
+window.onload = function search() {
     clickBtn(searchClassName);
 };
-
-// function clickSearch() {
-//     let hashtagBtns = document.querySelectorAll('.sc-bYTsla')
-//     hashtagBtns.forEach(btn => btn.click())
-// }
-
-// function clickCite() {
-//     let hashtagBtns = document.querySelectorAll('.sc-gisBJw')
-//     hashtagBtns.forEach(btn => btn.click())
-// }
-
-// function clickContinue() {
-// }
-
-// function clickComplete() {
-//     // alert("This is the first.");
-// }
-
-window.onload=enterLink();
-window.onload=clickSearch();
-window.onload=clickCite();
-window.onload=clickContinue();
-window.onload=clickComplete();
+window.onload = function cite() {
+    clickBtn(citeClassName);
+};
+window.onload = function continuee(){
+    clickBtn(continueClassName);
+};
+window.onload = function complete() {
+    clickBtn(completeClassName);
+};
