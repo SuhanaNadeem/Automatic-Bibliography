@@ -1,0 +1,19 @@
+{
+  "name": "automatic-bibliography",
+  "version": "1.0.0",
+  "description": "Automatic Bibliography",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuhanaNadeem/Automatic-Bibliography.git"
+  },
+  "author": "Suhana Nadeem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SuhanaNadeem/Automatic-Bibliography/issues"
+  },
+  "homepage": "https://github.com/SuhanaNadeem/Automatic-Bibliography#readme"
+}
