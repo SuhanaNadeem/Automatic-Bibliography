@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SuhanaNadeem/Automatic-Bibliography/issues"
   },
-  "homepage": "https://github.com/SuhanaNadeem/Automatic-Bibliography#readme"
+  "homepage": "https://github.com/SuhanaNadeem/Automatic-Bibliography#readme",
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  }
 }
