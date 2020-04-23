@@ -46,6 +46,25 @@ const {Builder, By, Key, util} = require("selenium-webdriver");
 async function example() {
     let driver = await new Builder().forBrowser("firefox").build();
     await driver.get("http://google.com");
+    
+    // Open EasyBib
     await driver.findElement(By.name("q")).sendKeys("EasyBib",Key.RETURN);
+    await driver.findElement(By.partialLinkText("EasyBib: Free")).click();
+    
+    // let toCite = "https://www.khanacademy.org/science/physics/forces-newtons-laws";
+    // let searchClassName = ".sc-bYTsla";
+    // let citeClassName = ".sc-gisBJw";
+    // let continueClassName = ".sc-gisBJw";
+    // let completeClassName = "sc-kjoXOD";
+
+    // // Search link in first field, then click subsequent buttons.
+    // await driver.findElement(By.className(searchClassName)).sendKeys(toCite,Key.RETURN);
+    // await driver.findElement(By.className(citeClassName)).click();
+    // await driver.findElement(By.className(continueClassName)).click();
+    // await driver.findElement(By.className(completeClassName)).click();
+
 }
 example();
+
+// Sources:
+// - https://www.youtube.com/watch?v=QwymPtk4zWo
