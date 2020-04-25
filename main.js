@@ -27,7 +27,7 @@ async function cite(toCite) {
     await driver.findElement(By.className(citeClassName)).click();
     // await driver.findElement(By.linkText("Cite")).click();
 
-    // await driver.findElement(By.className(continueClassName)).click();
+    await driver.findElement(By.className(continueClassName)).click();
     // await driver.findElement(By.className(completeClassName)).click();
 }
 
@@ -41,6 +41,7 @@ async function cite(toCite) {
 // for (i = 0; i < links.length; i++) {
 //     cite(links[i]);
 // }
+
 
 let toCite = "https://www.khanacademy.org/science/physics/forces-newtons-laws";
 cite(toCite);
