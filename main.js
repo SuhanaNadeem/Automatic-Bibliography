@@ -55,15 +55,19 @@ async function example() {
     await driver.findElement(By.name("q")).sendKeys("EasyBib",Key.RETURN);
     await driver.findElement(By.linkText("Easy Bib")).click();
     
-    // let toCite = "https://www.khanacademy.org/science/physics/forces-newtons-laws";
-    // let searchClassName = ".sc-bYTsla";
-    // let citeClassName = ".sc-gisBJw";
-    // let continueClassName = ".sc-gisBJw";
-    // let completeClassName = "sc-kjoXOD";
+    let toCite = "https://www.khanacademy.org/science/physics/forces-newtons-laws";
+    let citeClassName = "sc-gisBJw";
+    let continueClassName = "sc-gisBJw";
+    let completeClassName = "sc-kjoXOD";
+    let websiteClassName = "sc-cbMPqi";
+    let searchFieldClassName = "sc-blIhvV";
 
-    // // Search link in first field, then click subsequent buttons.
-    // await driver.findElement(By.className(searchClassName)).sendKeys(toCite,Key.RETURN);
-    // await driver.findElement(By.className(citeClassName)).click();
+    // Search link in first field, then click subsequent buttons.
+    await driver.findElement(By.className(websiteClassName)).click();
+
+    await driver.findElement(By.className(searchFieldClassName)).sendKeys(toCite,Key.RETURN);
+    
+    await driver.findElement(By.className(citeClassName)).click();
     // await driver.findElement(By.className(continueClassName)).click();
     // await driver.findElement(By.className(completeClassName)).click();
 
