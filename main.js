@@ -1,5 +1,5 @@
 const {Builder, By, Key, util} = require("selenium-webdriver");
-async function cite() {
+async function cite(toCite) {
     // let driver = await new Builder().forBrowser("firefox").build();
 
     var webdriver = require('selenium-webdriver');
@@ -11,7 +11,6 @@ async function cite() {
     // await driver.findElement(By.name("q")).sendKeys("EasyBib",Key.RETURN);
     // await driver.findElement(By.linkText("Easy Bib")).click();
     
-    let toCite = "https://www.khanacademy.org/science/physics/forces-newtons-laws";
     let citeClassName = "sc-gisBJw";
     let continueClassName = "sc-gisBJw";
     let completeClassName = "sc-kjoXOD";
@@ -31,4 +30,12 @@ async function cite() {
     // await driver.findElement(By.className(continueClassName)).click();
     // await driver.findElement(By.className(completeClassName)).click();
 }
-cite();
+
+// let links = ["https://www.khanacademy.org/science/physics/forces-newtons-laws", "https://www.bettycrocker.com/recipes/ultimate-chocolate-chip-cookies/77c14e03-d8b0-4844-846d-f19304f61c57", "https://www.rei.com/learn/expert-advice/training-for-your-first-marathon.html"];
+// let i;
+// for (i = 0; i < links.length; i++) {
+//     cite(links[i]);
+// }
+
+let toCite = "https://www.khanacademy.org/science/physics/forces-newtons-laws";
+cite(toCite);
