@@ -49,11 +49,11 @@ async function example() {
     var webdriver = require('selenium-webdriver');
 
     var driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
-    await driver.get("http://google.com");
+    await driver.get("https://www.easybib.com/mla8/source");
     
-    // Open EasyBib
-    await driver.findElement(By.name("q")).sendKeys("EasyBib",Key.RETURN);
-    await driver.findElement(By.linkText("Easy Bib")).click();
+    // Open EasyBib after searching on Google
+    // await driver.findElement(By.name("q")).sendKeys("EasyBib",Key.RETURN);
+    // await driver.findElement(By.linkText("Easy Bib")).click();
     
     let toCite = "https://www.khanacademy.org/science/physics/forces-newtons-laws";
     let citeClassName = "sc-gisBJw";
@@ -67,7 +67,9 @@ async function example() {
 
     await driver.findElement(By.className(searchFieldClassName)).sendKeys(toCite,Key.RETURN);
     
-    await driver.findElement(By.className(citeClassName)).click();
+    // await driver.findElement(By.className(citeClassName)).click();
+
+    await driver.findElement(By.linkText("Cite")).click();
     // await driver.findElement(By.className(continueClassName)).click();
     // await driver.findElement(By.className(completeClassName)).click();
 
