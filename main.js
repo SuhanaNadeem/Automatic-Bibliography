@@ -67,7 +67,7 @@ async function example() {
 
     await driver.findElement(By.className(searchFieldClassName)).sendKeys(toCite,Key.RETURN);
     
-    driver.sleep(5000)
+    // driver.sleep(5000)
     // await driver.findElement(By.className(citeClassName)).sendKeys(Keys.RETURN);
     await driver.findElement(By.className(citeClassName)).click();
     // await driver.findElement(By.linkText("Cite")).click();
