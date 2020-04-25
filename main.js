@@ -31,7 +31,12 @@ async function cite(toCite) {
     // await driver.findElement(By.className(completeClassName)).click();
 }
 
-// let links = ["https://www.khanacademy.org/science/physics/forces-newtons-laws", "https://www.bettycrocker.com/recipes/ultimate-chocolate-chip-cookies/77c14e03-d8b0-4844-846d-f19304f61c57", "https://www.rei.com/learn/expert-advice/training-for-your-first-marathon.html"];
+// Read link text file into array
+// var fs = require("fs");
+// var allLinks = fs.readFileSync("./links.txt").toString('utf-8');
+// let links = allLinks.split("\n")
+
+// Iterating through each link and passing it to cite()
 // let i;
 // for (i = 0; i < links.length; i++) {
 //     cite(links[i]);
