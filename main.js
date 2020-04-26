@@ -16,6 +16,7 @@ async function cite(toCite) {
     let completeClassName = "sc-kjoXOD";
     let websiteClassName = "sc-cbMPqi";
     let searchFieldClassName = "sc-blIhvV";
+    let createClassName = "sc-fZwumE";
 
     // Search link in first field, then click subsequent buttons.
     await driver.findElement(By.className(websiteClassName)).click();
@@ -24,11 +25,15 @@ async function cite(toCite) {
     
     // driver.sleep(5000)
     // await driver.findElement(By.className(citeClassName)).sendKeys(Keys.RETURN);
+    await driver.sleep(5000);
     await driver.findElement(By.className(citeClassName)).click();
     // await driver.findElement(By.linkText("Cite")).click();
 
     await driver.findElement(By.className(continueClassName)).click();
-    // await driver.findElement(By.className(completeClassName)).click();
+    await driver.findElement(By.className(completeClassName)).click();
+    await driver.findElement(By.className(createClassName)).click();
+    await driver.findElement(By.className(websiteClassName)).click();
+
 }
 
 // Read link text file into array
