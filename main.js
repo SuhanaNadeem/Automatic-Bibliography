@@ -19,7 +19,7 @@ async function cite(toCite) {
     
     let completeXPath = "//button[contains(@class,'complete-citation')]";
     let completeClassName = "sc-kjoXOD";
-    
+
     let websiteClassName = "sc-cbMPqi";
     let searchFieldClassName = "sc-blIhvV";
     let createClassName = "sc-fZwumE";
@@ -38,8 +38,11 @@ async function cite(toCite) {
 
     await driver.sleep(5000);
     // await driver.findElement(By.className(completeClassName)).click();
-    
-    // await driver.findElement(By.className(createClassName)).click();
+    await driver.findElement(By.xpath(completeXPath)).click();
+
+    await driver.sleep(2000);
+
+    await driver.findElement(By.className(createClassName)).click();
     // await driver.findElement(By.className(websiteClassName)).click();
 
 }
