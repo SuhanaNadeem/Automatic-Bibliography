@@ -1,5 +1,5 @@
 const {Builder, By, Key, util} = require("selenium-webdriver");
-async function cite(toCite) {
+async function cite(links) {
     // let driver = await new Builder().forBrowser("firefox").build();
 
     var webdriver = require('selenium-webdriver');
@@ -24,40 +24,34 @@ async function cite(toCite) {
     let searchFieldClassName = "sc-blIhvV";
     let createClassName = "sc-fZwumE";
 
-    // Search link in first field, then click subsequent buttons.
-    await driver.findElement(By.className(websiteClassName)).click();
+    let i;
+    for (i = 0; i < links.length; i++) {
+        let toCite = links[i];
+        // Search link in first field, then click subsequent buttons.
+        await driver.findElement(By.className(websiteClassName)).click();
 
-    await driver.findElement(By.className(searchFieldClassName)).sendKeys(toCite,Key.RETURN);
-    
-    await driver.sleep(3000);
-    await driver.findElement(By.className(citeClassName)).click();
+        await driver.findElement(By.className(searchFieldClassName)).sendKeys(toCite,Key.RETURN);
+        
+        await driver.sleep(3000);
+        await driver.findElement(By.className(citeClassName)).click();
 
-    await driver.sleep(3000);
-    // await driver.findElement(By.className(continueClassName)).click();
-    await driver.findElement(By.xpath(continueXPath)).click();
+        await driver.sleep(3000);
+        // await driver.findElement(By.className(continueClassName)).click();
+        await driver.findElement(By.xpath(continueXPath)).click();
 
-    await driver.sleep(5000);
-    // await driver.findElement(By.className(completeClassName)).click();
-    await driver.findElement(By.xpath(completeXPath)).click();
+        await driver.sleep(5000);
+        // await driver.findElement(By.className(completeClassName)).click();
+        await driver.findElement(By.xpath(completeXPath)).click();
 
-    await driver.sleep(2000);
-
-    await driver.findElement(By.className(createClassName)).click();
-    // await driver.findElement(By.className(websiteClassName)).click();
-
+        await driver.sleep(2000);
+        await driver.findElement(By.className(createClassName)).click();
+    }
 }
 
 // Read link text file into array
-// var fs = require("fs");
-// var allLinks = fs.readFileSync("./links.txt").toString('utf-8');
-// let links = allLinks.split("\n")
+var fs = require("fs");
+var allLinks = fs.readFileSync("./links.txt").toString('utf-8');
+let links = allLinks.split("\n")
 
 // Iterating through each link and passing it to cite()
-// let i;
-// for (i = 0; i < links.length; i++) {
-//     cite(links[i]);
-// }
-
-
-let toCite = "https://www.khanacademy.org/science/physics/forces-newtons-laws";
-cite(toCite);
+cite(links);
