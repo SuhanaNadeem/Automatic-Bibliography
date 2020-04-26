@@ -12,8 +12,14 @@ async function cite(toCite) {
     // await driver.findElement(By.linkText("Easy Bib")).click();
     
     let citeClassName = "sc-gisBJw";
-    let continueClassName = "sc-gisBJw";
+    // let continueClassName = "sc-gisBJw";
+    let continueXPath = "//button[contains(@class,'flNamk')]";
+    // let continueXPath = "//button[@class='sc-gisBJw flNamk submit-eval']";
+    // let continueXPath = "//button[text()='Continue ')]";
+    
+    let completeXPath = "//button[contains(@class,'complete-citation')]";
     let completeClassName = "sc-kjoXOD";
+    
     let websiteClassName = "sc-cbMPqi";
     let searchFieldClassName = "sc-blIhvV";
     let createClassName = "sc-fZwumE";
@@ -23,16 +29,18 @@ async function cite(toCite) {
 
     await driver.findElement(By.className(searchFieldClassName)).sendKeys(toCite,Key.RETURN);
     
-    // driver.sleep(5000)
-    // await driver.findElement(By.className(citeClassName)).sendKeys(Keys.RETURN);
-    await driver.sleep(5000);
+    await driver.sleep(3000);
     await driver.findElement(By.className(citeClassName)).click();
-    // await driver.findElement(By.linkText("Cite")).click();
 
-    await driver.findElement(By.className(continueClassName)).click();
-    await driver.findElement(By.className(completeClassName)).click();
-    await driver.findElement(By.className(createClassName)).click();
-    await driver.findElement(By.className(websiteClassName)).click();
+    await driver.sleep(3000);
+    // await driver.findElement(By.className(continueClassName)).click();
+    await driver.findElement(By.xpath(continueXPath)).click();
+
+    await driver.sleep(5000);
+    // await driver.findElement(By.className(completeClassName)).click();
+    
+    // await driver.findElement(By.className(createClassName)).click();
+    // await driver.findElement(By.className(websiteClassName)).click();
 
 }
 
