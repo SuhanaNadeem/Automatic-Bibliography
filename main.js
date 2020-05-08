@@ -37,10 +37,8 @@ async function cite(links) {
             await driver.sleep(35000);
         }
 
-        // if(i!=links.length-1){
         await driver.sleep(4000);
         await driver.findElement(By.className(createClassName)).click();
-        // }
         
     }
 }
@@ -51,6 +49,3 @@ var allLinks = fs.readFileSync("./links.txt").toString('utf-8');
 let links = allLinks.split("\n")
 
 cite(links);
-
-// Problems:
-// website not found - sol: store which link didn't work, click back and enter next link
