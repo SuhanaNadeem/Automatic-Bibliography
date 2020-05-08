@@ -30,8 +30,16 @@ async function cite(links) {
         await driver.sleep(4000);
         await driver.findElement(By.xpath(completeXPath)).click();
 
+        if(driver.findElements(By.xpath(watchedAdXPath)).size() != 0) {
+            console.log("watch ad button");
+            // await driver.findElement(By.xpath(watchedAdXPath)).click();
+            // await driver.sleep(30000);
+        }
+
         await driver.sleep(4000);
         await driver.findElement(By.className(createClassName)).click();
+
+        
     }
 }
 
