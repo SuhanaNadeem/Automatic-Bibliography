@@ -1,2 +1,2 @@
 # Automatic-Bibliography
-This script automatically cites links on EasyBib using Selenium browser automation.
+This script automatically cites links on EasyBib using Selenium Browser Automation.
