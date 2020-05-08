@@ -34,12 +34,13 @@ async function cite(links) {
         if(i==1 && driver.findElement(By.xpath(watchedAdXPath)) != null) {
             // console.log("watch ad button");
             await driver.findElement(By.xpath(watchedAdXPath)).click();
-            await driver.sleep(20000);
+            await driver.sleep(35000);
         }
 
+        // if(i!=links.length-1){
         await driver.sleep(4000);
         await driver.findElement(By.className(createClassName)).click();
-
+        // }
         
     }
 }
