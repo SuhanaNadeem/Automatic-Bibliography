@@ -11,7 +11,8 @@ async function cite(links) {
     let websiteClassName = "sc-cbMPqi";
     let searchFieldClassName = "sc-blIhvV";
     let createClassName = "sc-fZwumE";
-    let watchedAdXPath = "//a[contains(@data-test-id,'watch-ad']";
+    // let watchedAdXPath = "//a[contains(@data-test-id,'watch-ad']";
+    let watchedAdXPath = "//img[contains(@src,'//media.studybreakmedia.com/modules/admodal-assets/free-sticker.png')]";
 
     let i;
     for (i = 0; i < links.length; i++) {
@@ -30,10 +31,10 @@ async function cite(links) {
         await driver.sleep(4000);
         await driver.findElement(By.xpath(completeXPath)).click();
 
-        if(driver.findElements(By.xpath(watchedAdXPath)).size() != 0) {
+        if(i==1 && driver.findElement(By.xpath(watchedAdXPath)) != null) {
             console.log("watch ad button");
-            // await driver.findElement(By.xpath(watchedAdXPath)).click();
-            // await driver.sleep(30000);
+            await driver.findElement(By.xpath(watchedAdXPath)).click();
+            await driver.sleep(20000);
         }
 
         await driver.sleep(4000);
