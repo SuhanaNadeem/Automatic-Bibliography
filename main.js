@@ -11,7 +11,6 @@ async function cite(links) {
     let websiteClassName = "sc-cbMPqi";
     let searchFieldClassName = "sc-blIhvV";
     let createClassName = "sc-fZwumE";
-    // let watchedAdXPath = "//a[contains(@data-test-id,'watch-ad']";
     let watchedAdXPath = "//img[contains(@src,'//media.studybreakmedia.com/modules/admodal-assets/free-sticker.png')]";
 
     let i;
