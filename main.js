@@ -16,7 +16,7 @@ async function cite(links) {
 
     let i;
     for (i = 0; i < links.length; i++) {
-        console.log(i);
+        // console.log(i);
         let toCite = links[i];
 
         await driver.findElement(By.className(websiteClassName)).click();
@@ -32,7 +32,7 @@ async function cite(links) {
         await driver.findElement(By.xpath(completeXPath)).click();
 
         if(i==1 && driver.findElement(By.xpath(watchedAdXPath)) != null) {
-            console.log("watch ad button");
+            // console.log("watch ad button");
             await driver.findElement(By.xpath(watchedAdXPath)).click();
             await driver.sleep(20000);
         }
@@ -52,5 +52,4 @@ let links = allLinks.split("\n")
 cite(links);
 
 // Problems:
-// add pop-up - sol: click back and re-enter link
 // website not found - sol: store which link didn't work, click back and enter next link
